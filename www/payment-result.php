@@ -17,10 +17,23 @@ $response = $pxpay->getResponse( $result );
 
 // Determine the result
 if ( $response->getSuccess() == 1 ) {
+	function content () {
+
+		echo '<h1 class="text-center">Approved!</h1>';
+	}
+	include "templates/master.inc.php"; 
+
 	// Approved
-	echo '<h1>Approved!</h1>';
+	// echo '<h1>Approved!</h1>';
+
 } else {
-	echo '<h1>Declined.</h1>';
+	function content () {
+
+		echo '<h1 class="text-center">Denied</h1>';
+	}
+	include "templates/master.inc.php"; 
+
+	// echo '<h1>Declined.</h1>';
 }
 
 echo '<pre>';
